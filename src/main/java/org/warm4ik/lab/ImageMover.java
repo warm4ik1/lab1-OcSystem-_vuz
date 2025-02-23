@@ -22,8 +22,8 @@ public class ImageMover extends JFrame {
     private final JLabel countLabel;
     private Image image;
 
-    private int dx = 5;
-    private int dy = 5;
+    private int dx = 10;
+    private int dy = 10;
 
     public ImageMover() {
         setTitle("Бегающий смайлик");
@@ -77,15 +77,15 @@ public class ImageMover extends JFrame {
                         e.getY() >= y && e.getY() <= y + IMAGE_SIZE) {
                     count++;
                     countLabel.setText("Счётчик: " + count);
-                    if (isMoving) {
-                        timer.stop();
-                        isMoving = false;
-                    }
+//                    if (isMoving) {
+//                        timer.stop();
+//                        isMoving = false;
+//                    }
                 }
             }
         });
 
-        timer = new Timer(5, new ActionListener() {
+        timer = new Timer(2, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 x += dx;

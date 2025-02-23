@@ -7,15 +7,17 @@ import java.awt.event.MouseEvent;
 
 public class ButtonHoverApp extends JFrame {
     public ButtonHoverApp() {
-        setTitle("Кнопка: приёл - ушёл");
+        setTitle("Кнопка: пришёл - ушёл");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
 
         JButton button1 = new JButton("Ушёл");
+        button1.setBackground(Color.red);
         add(button1);
 
         JButton button2 = new JButton("Ушёл");
+        button2.setBackground(Color.red);
         add(button2);
 
 
@@ -23,11 +25,13 @@ public class ButtonHoverApp extends JFrame {
             @Override
             public void mouseEntered(MouseEvent e) {
                 button1.setText("Пришёл");
+                button1.setBackground(Color.green);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 button1.setText("Ушёл");
+                button1.setBackground(Color.red);
             }
         });
 
@@ -35,11 +39,13 @@ public class ButtonHoverApp extends JFrame {
             @Override
             public void mouseEntered(MouseEvent e) {
                 button2.setText("Пришёл");
+                button2.setBackground(Color.green);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 button2.setText("Ушёл");
+                button2.setBackground(Color.red);
             }
         });
     }
